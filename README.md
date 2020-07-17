@@ -1,4 +1,5 @@
 # estagio_gantt
+https://jp-peres.github.io/estagio_gantt/index.html
 
 
 ## Gantt chart with roadmap of tasks for the 2019-2020 MIEI internship @ Link Consulting 
