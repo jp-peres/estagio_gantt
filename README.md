@@ -1,7 +1,7 @@
 # estagio_gantt
 
 
-## Gant chart with 2019-2020 internship RoadMap of tasks
+## Gantt chart with roadmap of tasks for the 2019-2020 MIEI internship @ Link Consulting 
 
 ### How does it work?
 
