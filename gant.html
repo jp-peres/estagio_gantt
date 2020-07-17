@@ -1,0 +1,112 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['gantt'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function daysToMilliseconds(days) {
+      return days * 24 * 60 * 60 * 1000;
+    }
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Task ID');
+      data.addColumn('string', 'Task Name');
+      data.addColumn('string', 'Resource');
+      data.addColumn('date', 'Start Date');
+      data.addColumn('date', 'End Date');
+      data.addColumn('number', 'Duration');
+      data.addColumn('number', 'Percent Complete');
+      data.addColumn('string', 'Dependencies');
+
+      data.addRows([
+        ['Atlas', 'Introdução da Link e Formação ATLAS', 'intro',
+          new Date(2020, 3, 1), new Date(2020, 3, 3), null, 100, null],
+        ['Motor', 'Introdução do contexto do Motor Analítico', 'intro',
+          new Date(2020, 3, 3), null, daysToMilliseconds(1), 100, null],
+        ['Ambiente', 'Instalação do ambiente de desenvolvimento (MySQL, Spring)', 'intro',
+          new Date(2020, 3, 8), null, daysToMilliseconds(1), 100, null],
+
+        ['Investigacao', 'Investigação - Apache Druid', 'druid-investigation',
+          new Date(2020, 3, 9), null, daysToMilliseconds(2), 100, 'Ambiente'],
+        ['Investigacao2', 'Instalação/configuração inicial - Apache Druid', 'druid-investigation',
+          new Date(2020, 3, 15), null, daysToMilliseconds(2), 100, 'Investigacao'],
+        ['Investigacao3', 'Queries - Apache Druid', 'druid-investigation2',
+          new Date(2020, 3, 22), null, daysToMilliseconds(3), 100, 'Investigacao2'],
+        ['Investigacao4', 'SQL queries via Console e Spring Webservice - Apache Druid/Spring', 'druid-investigation2',
+          new Date(2020, 3, 23), null, daysToMilliseconds(2), 100, null],
+        ['Investigacao5', 'Inserções tabela Audit - MySQL Server', 'mysql',
+          new Date(2020, 3, 28), null, daysToMilliseconds(2), 100, 'Investigacao4'],
+        ['Investigacao6', 'Script de correção de inserções exportadas do MySQL - Phyton', 'phyton',
+          new Date(2020, 3, 29), null, daysToMilliseconds(1), 100, null],
+        ['Investigacao7', 'Integração das entradas em formato JSON via Kafka para Druid - Apache Druid', 'druid-investigation3',
+          new Date(2020, 3, 30), null, daysToMilliseconds(1), 100, 'Investigacao6'],
+        ['Investigacao8', 'Tunning de ficheiros de configuração para melhoria performance - Apache Druid', 'druid-investigation3',
+          new Date(2020, 4, 6), null, daysToMilliseconds(3), 100, 'Investigacao7'],
+        ['Investigacao9', 'Queries para tabela Audit - Apache Druid', 'druid-investigation4',
+          new Date(2020, 4, 8), null, daysToMilliseconds(1), 100, null],
+        ['Investigacao10', 'Queries para tabela Audit - Apache Druid', 'druid-investigation4',
+          new Date(2020, 4, 13), null, daysToMilliseconds(3), 100, 'Investigacao9'],
+        ['Investigacao11', 'Concepção inicial do serviço REST para executar queries na tabela Audit - Spring', 'spring-druid',
+          new Date(2020, 4, 15), null, daysToMilliseconds(1), 100, null],
+        ['Investigacao12', 'Concepção inicial do serviço REST para executar queries na tabela Audit - Spring', 'spring-druid',
+          new Date(2020, 4, 20), null, daysToMilliseconds(3), 100, 'Investigacao11'],
+        ['Investigacao13', 'Testes na solução inicial do serviço REST - Spring/CURL', 'spring-test',
+          new Date(2020, 4, 27), null, daysToMilliseconds(3), 100, 'Investigacao12'],
+        ['Investigacao14', 'Refactorização da solução inicial do serviço REST - Spring', 'spring-druid2',
+          new Date(2020, 5, 3), null, daysToMilliseconds(3), 100, 'Investigacao13'],
+        ['Investigacao15', 'Continução de testes do serviço REST - Spring/CURL', 'spring-test2',
+          new Date(2020, 5, 5), null, daysToMilliseconds(1), 100, 'Investigacao14'],
+        ['Investigacao16', 'Investigação de ferramentas de Business Intelligence com suporte ao Druid', 'BI-Investigation',
+          new Date(2020, 5, 10), null, daysToMilliseconds(2), 100, 'Investigacao15'],
+        ['Investigacao17', 'Investigação de ferramentas de Business Intelligence com suporte ao Druid', 'BI-Investigation',
+          new Date(2020, 5, 12), null, daysToMilliseconds(1), 100, 'Investigacao16'],
+        ['Investigacao18', 'Instalação e configuração da ferramenta BI Superset - Apache Superset', 'BI-Superset',
+          new Date(2020, 5, 17), null, daysToMilliseconds(2), 100, 'Investigacao17'],
+        ['Investigacao19', 'Exploração de queries e funcionamento - Apache Superset', 'BI-Superset',
+          new Date(2020, 5, 18), null, daysToMilliseconds(1), 100, 'Investigacao18'],
+        ['Investigacao20', 'Integração/Experimentação com o Druid - Apache Superset', 'BI-Superset',
+          new Date(2020, 5, 19), null, daysToMilliseconds(1), 100, 'Investigacao19'],
+        ['Investigacao21', 'Experimentaçáo com Druid na ferramenta BI Metabase - Metabase', 'BI-Metabase',
+          new Date(2020, 5, 20), null, daysToMilliseconds(2), 100, 'Investigacao20'],
+        ['Investigacao22', 'Dashboards e Charts para aplicações externas - Apache Superset', 'BI-Superset2',
+          new Date(2020, 5, 25), null, daysToMilliseconds(2), 100, 'Investigacao21'],
+        ['Investigacao23', 'Refactorização do serviço REST (novas instruções) - Spring', 'spring-druid3',
+          new Date(2020, 6, 1), null, daysToMilliseconds(3), 100, 'Investigacao22'],
+      ]);
+
+      // Abril - dia 10, 12, 25
+      // Maio - dia 1, 3
+      // Junho - dia 10, 11 
+      /*      var formatter = new google.visualization.DateFormat({ pattern: "dd, MM, YYYY" });
+      
+            // Reformat our data.
+            formatter.format(data, 3);
+            // Reformat our data.
+         formatter.format(data, 4);*/
+      var options = {
+        height: 3000,
+        gantt: {
+          labelMaxWidth: 1000,
+          trackHeight: 50,
+          percentEnabled: true
+        }
+      };
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+
+<body>
+  <h2 style="text-align: center;color:rgb(94, 151, 246); text-shadow: 2px 2px #efefef">Gantt Chart - Estágio Link 2020
+  </h2>
+  <div id="chart_div"></div>
+</body>
+
+</html>
