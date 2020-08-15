@@ -32,7 +32,6 @@
           new Date(2020, 3, 3), null, daysToMilliseconds(1), 100, null],
         ['Ambiente', 'Instalação do ambiente de desenvolvimento (MySQL, Spring)', 'intro',
           new Date(2020, 3, 8), null, daysToMilliseconds(1), 100, null],
-
         ['Investigacao', 'Investigação - Apache Druid', 'druid-investigation',
           new Date(2020, 3, 9), null, daysToMilliseconds(2), 100, 'Ambiente'],
         ['Investigacao2', 'Instalação/configuração inicial - Apache Druid', 'druid-investigation',
@@ -79,6 +78,30 @@
           new Date(2020, 5, 25), null, daysToMilliseconds(2), 100, 'Investigacao21'],
         ['Investigacao23', 'Refactorização do serviço REST (novas instruções) - Spring', 'spring-druid3',
           new Date(2020, 6, 1), null, daysToMilliseconds(3), 100, 'Investigacao22'],
+        ['Investigacao24', 'Criação de vista para consumo do serviço REST - React', 'react',
+          new Date(2020, 6, 8), null, daysToMilliseconds(3), 100, 'Investigacao23'],
+        ['Investigacao25', 'Refactorização do serviço REST para incluir novos pârametros (paginação, sorting e filters)', 'spring-druid4',
+          new Date(2020, 6, 16), null, daysToMilliseconds(2), 100, 'Investigacao24'],
+        ['Investigacao26', 'Refactorização do serviço REST - Paginação', 'spring-druid4',
+          new Date(2020, 6, 22), null, daysToMilliseconds(3), 100, 'Investigacao25'],
+        ['Investigacao27', 'Refactorização do serviço REST - Paginação', 'spring-druid4',
+          new Date(2020, 6, 29), null, daysToMilliseconds(1), 100, 'Investigacao26'],
+        ['Investigacao28', 'Refactorização do serviço REST - Sorting', 'spring-druid4',
+          new Date(2020, 6, 30), null, daysToMilliseconds(3), 100, 'Investigacao27'],
+        ['Investigacao29', 'Instalação/configuração do Druid com a stream Kafka do ATLAS na máquina da Link', 'link-installation',
+          new Date(2020, 7, 5), null, daysToMilliseconds(1), 100, 'Investigacao28'],
+        ['Investigacao30', 'Refactorização do serviço REST - Filters', 'spring-druid4',
+          new Date(2020, 7, 6), null, daysToMilliseconds(3), 100, 'Investigacao29'],
+        ['Investigacao31', 'Comentários e simplificações finais no serviço REST', 'spring-druid4',
+          new Date(2020, 7, 12), null, daysToMilliseconds(2), 100, 'Investigacao30'],
+        ['Investigacao32', 'Preparação de apresentações e toques finais de parte final do relatório', 'presentation-prep',
+          new Date(2020, 7, 13), null, daysToMilliseconds(2), 100, 'Investigacao31'],
+        ['Investigacao33', 'Instalação do serviço REST na máquina da Link', 'link-installation',
+          new Date(2020, 7, 14), null, daysToMilliseconds(1), 100, 'Investigacao32'],
+        ['Investigacao34', 'Apresentação de Estágio Curricular para a FCT', 'presentations',
+          new Date(2020, 7, 17), null, daysToMilliseconds(1), 100, 'Investigacao33'],
+        ['Investigacao35', 'Apresentação de Estágio Curricular para a Link Consulting', 'presentations',
+          new Date(2020, 7, 19), null, daysToMilliseconds(1), 100, 'Investigacao34'],
       ]);
 
       // Abril - dia 10, 12, 25
@@ -92,6 +115,7 @@
          formatter.format(data, 4);*/
       var options = {
         height: 3000,
+        width: 2000,
         gantt: {
           labelMaxWidth: 1000,
           trackHeight: 50,
